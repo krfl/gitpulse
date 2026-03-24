@@ -1,0 +1,21 @@
+[package]
+name = "gitpulse"
+version = "1.0.0"
+edition = "2024"
+license = "Apache-2.0"
+description = "A TUI dashboard for monitoring git repository status"
+repository = "https://github.com/krfl/gitpulse"
+rust-version = "1.86"
+
+[[bin]]
+name = "gitpulse"
+path = "src/main.rs"
+
+[dependencies]
+clap = { version = "4", features = ["derive"] }
+color-eyre = "0.6"
+crossterm = "0.29"
+ratatui = "0.30"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+ureq = { version = "2", features = ["json"] }
