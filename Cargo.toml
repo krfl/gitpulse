@@ -2,10 +2,13 @@
 name = "gitocular"
 version = "1.0.0"
 edition = "2024"
+authors = ["krfl <2630397+krfl@users.noreply.github.com>"]
 license = "Apache-2.0"
 description = "A TUI dashboard for monitoring git repository status"
 repository = "https://github.com/krfl/gitocular"
 rust-version = "1.86"
+keywords = ["git", "tui", "dashboard", "terminal"]
+categories = ["command-line-utilities", "development-tools"]
 
 [[bin]]
 name = "gitocular"
