@@ -1,7 +1,7 @@
 # Gitocular
 
 A TUI dashboard for monitoring git repository status. Inspired by
-[kando-tui](https://github.com/krfl/kando-tui), Gitocular borrows the visual
+[kando-tui](https://github.com/krfl/kando), Gitocular borrows the visual
 language of a kanban board — repos are sorted into columns by their sync state
 so you can see at a glance which ones need attention and which are clean.
 
