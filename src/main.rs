@@ -11,7 +11,7 @@ mod ui;
 
 #[derive(Parser)]
 #[command(
-    name = "gitpulse",
+    name = "gitocular",
     about = "A TUI dashboard for monitoring git repository status"
 )]
 struct Cli {

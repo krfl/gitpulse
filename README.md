@@ -1,14 +1,14 @@
-# GitPulse
+# Gitocular
 
 A TUI dashboard for monitoring git repository status. Inspired by
-[kando-tui](https://github.com/krfl/kando-tui), GitPulse borrows the visual
+[kando-tui](https://github.com/krfl/kando-tui), Gitocular borrows the visual
 language of a kanban board — repos are sorted into columns by their sync state
 so you can see at a glance which ones need attention and which are clean.
 
 ## Why a kanban board?
 
 Managing dozens of repos means constantly asking "did I push that?", "is this
-one behind?", "do I have uncommitted work somewhere?". GitPulse answers all of
+one behind?", "do I have uncommitted work somewhere?". Gitocular answers all of
 those questions in a single view. Repos that need work land in the leftmost
 columns; repos that are clean sit on the right. The further left a card is, the
 more urgently it needs your attention.
@@ -26,7 +26,7 @@ more urgently it needs your attention.
 
 ### Repository scanning
 
-Point GitPulse at a directory and it finds all git repos one level deep,
+Point Gitocular at a directory and it finds all git repos one level deep,
 classifies each into one of four columns:
 
 | Column | Meaning |
@@ -42,7 +42,7 @@ states as tags on the card.
 
 ### Background git fetch
 
-On startup GitPulse fetches all repos in the background with bounded concurrency
+On startup Gitocular fetches all repos in the background with bounded concurrency
 (8 threads, 15-second timeout). Interactive prompts are suppressed
 (`GIT_TERMINAL_PROMPT=0`, `ssh -o BatchMode=yes`) so a stuck credential helper
 won't block the dashboard.
@@ -55,7 +55,7 @@ the interface stays responsive.
 
 ### Forge integration
 
-GitPulse fetches stats from your forge and shows them directly on each card:
+Gitocular fetches stats from your forge and shows them directly on each card:
 
 - **Open PRs** (green) and **open issues** (red)
 - **Fork** status
@@ -71,7 +71,7 @@ Supported forges:
 
 #### Self-hosted instances
 
-GitPulse recognizes GitHub, GitLab, and Codeberg by their hostnames automatically.
+Gitocular recognizes GitHub, GitLab, and Codeberg by their hostnames automatically.
 For self-hosted Gitea or GitLab instances, register the host via environment
 variables:
 
@@ -93,7 +93,7 @@ API calls run on a separate thread pool (4 workers) and won't block navigation.
 
 ### Worktree support
 
-GitPulse understands git worktrees:
+Gitocular understands git worktrees:
 
 - Standard worktrees are grouped under their main repo
 - Bare container repos (`.git` → `.bare`) are scanned one level deeper
@@ -148,10 +148,10 @@ cargo install --path .
 
 ```sh
 # Scan the current directory
-gitpulse
+gitocular
 
 # Scan a specific directory
-gitpulse ~/projects
+gitocular ~/projects
 ```
 
 ### Authentication
@@ -164,7 +164,7 @@ export GITLAB_TOKEN="glpat-..."
 export GITEA_TOKEN="..."
 ```
 
-For GitHub, if no token is set GitPulse falls back to `gh auth token`.
+For GitHub, if no token is set Gitocular falls back to `gh auth token`.
 
 For self-hosted instances, also set the host variables:
 

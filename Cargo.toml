@@ -1,14 +1,14 @@
 [package]
-name = "gitpulse"
+name = "gitocular"
 version = "1.0.0"
 edition = "2024"
 license = "Apache-2.0"
 description = "A TUI dashboard for monitoring git repository status"
-repository = "https://github.com/krfl/gitpulse"
+repository = "https://github.com/krfl/gitocular"
 rust-version = "1.86"
 
 [[bin]]
-name = "gitpulse"
+name = "gitocular"
 path = "src/main.rs"
 
 [dependencies]

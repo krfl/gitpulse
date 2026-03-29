@@ -5,7 +5,7 @@ use std::time::Duration;
 use crate::model::{ForgeKind, ForgeStats, RemoteInfo, Scheme};
 
 const API_TIMEOUT: Duration = Duration::from_secs(10);
-const USER_AGENT: &str = "gitpulse";
+const USER_AGENT: &str = "gitocular";
 
 static HTTP_AGENT: OnceLock<ureq::Agent> = OnceLock::new();
 

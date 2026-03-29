@@ -49,24 +49,24 @@
           src = craneLib.cleanCargoSource ./.;
           commonArgs = {
             inherit src;
-            pname = "gitpulse";
+            pname = "gitocular";
             strictDeps = true;
             nativeCheckInputs = [ pkgs.git ];
           };
           cargoArtifacts = craneLib.buildDepsOnly commonArgs;
-          gitpulse = craneLib.buildPackage (commonArgs // {
+          gitocular = craneLib.buildPackage (commonArgs // {
             inherit cargoArtifacts;
             meta = {
               description = "A TUI dashboard for monitoring git repository status";
-              homepage = "https://github.com/krfl/gitpulse";
+              homepage = "https://github.com/krfl/gitocular";
               license = pkgs.lib.licenses.asl20;
-              mainProgram = "gitpulse";
+              mainProgram = "gitocular";
             };
           });
         in
         {
-          default = gitpulse;
-          inherit gitpulse;
+          default = gitocular;
+          inherit gitocular;
         }
       );
 
@@ -77,21 +77,21 @@
           src = craneLib.cleanCargoSource ./.;
           commonArgs = {
             inherit src;
-            pname = "gitpulse";
+            pname = "gitocular";
             strictDeps = true;
             nativeCheckInputs = [ pkgs.git ];
           };
           cargoArtifacts = craneLib.buildDepsOnly commonArgs;
         in
         {
-          gitpulse = self.packages.${system}.default;
+          gitocular = self.packages.${system}.default;
 
-          gitpulse-clippy = craneLib.cargoClippy (commonArgs // {
+          gitocular-clippy = craneLib.cargoClippy (commonArgs // {
             inherit cargoArtifacts;
             cargoClippyExtraArgs = "--workspace -- -D warnings";
           });
 
-          gitpulse-tests = craneLib.cargoTest (commonArgs // {
+          gitocular-tests = craneLib.cargoTest (commonArgs // {
             inherit cargoArtifacts;
           });
         }
@@ -120,7 +120,7 @@
       );
 
       overlays.default = final: _prev: {
-        gitpulse = self.packages.${final.system}.default;
+        gitocular = self.packages.${final.system}.default;
       };
     };
 }
