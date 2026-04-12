@@ -1,6 +1,6 @@
 [package]
 name = "gitocular"
-version = "1.0.0"
+version = "1.0.1"
 edition = "2024"
 authors = ["krfl <2630397+krfl@users.noreply.github.com>"]
 license = "Apache-2.0"
