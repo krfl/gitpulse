@@ -26,6 +26,15 @@ impl SyncState {
             SyncState::Ahead => "Ahead",
         }
     }
+
+    pub(crate) fn json_key(self) -> &'static str {
+        match self {
+            SyncState::Behind => "behind",
+            SyncState::Uncommitted => "uncommitted",
+            SyncState::InSync => "in_sync",
+            SyncState::Ahead => "ahead",
+        }
+    }
 }
 
 #[derive(Debug, Clone, PartialEq, Eq)]
