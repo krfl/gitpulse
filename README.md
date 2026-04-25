@@ -147,12 +147,41 @@ cargo install --path .
 ## Usage
 
 ```sh
-# Scan the current directory
+# Launch the TUI (scans current directory)
 gitocular
 
-# Scan a specific directory
-gitocular ~/projects
+# Launch the TUI for a specific directory
+gitocular -p ~/projects
 ```
+
+### CLI commands
+
+Gitocular can also be used non-interactively. All commands accept
+`-p`/`--path` to set the scan directory (defaults to `.`) and `--json`
+for machine-readable output.
+
+```sh
+# One-line summary of repo states
+gitocular status
+# 0 behind, 3 uncommitted, 10 in sync, 1 ahead
+
+# List repos grouped by sync state
+gitocular list
+
+# Any command supports --json for scripting
+gitocular list --json
+gitocular status --json
+
+# Fetch all repos with remotes (8 concurrent threads)
+gitocular fetch
+
+# Pull all repos that are behind their upstream
+gitocular pull
+```
+
+`status` exits with code 1 if any repo is not in sync, making it useful
+in scripts and CI checks. `fetch` and `pull` exit with code 1 if any
+operation fails.
 
 ### Authentication
 
